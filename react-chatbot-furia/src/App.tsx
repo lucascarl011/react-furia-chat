@@ -45,7 +45,7 @@ const botResponse = (msg: string): string => {
     return "🔍 Curiosidade: a FURIA foi uma das primeiras organizações brasileiras a atingir o Top 5 do ranking mundial HLTV!";
   }
   if (lower.includes("como apoiar a furia")) {
-    return "🛒 Você pode apoiar a FURIA comprando produtos oficiais na loja https://www.furia.gg/produtos ou seguindo-os nas redes sociais para ficar por dentro das novidades!";
+    return "🛒 Você pode apoiar a FURIA comprando produtos oficiais na loja https://www.furia.gg/produtos ou pode nos seguir nas redes sociais para ficar por dentro das novidades!";
   }
 
   return "🤖 Ainda estou aprendendo... Tente perguntar sobre jogos, MVPs ou a loja!";
