@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import furiaBg from "./assets/csgo.png";
 
-// Função de resposta do bot
 const botResponse = (msg: string): string => {
   const lower = msg.toLowerCase();
 
@@ -81,14 +81,21 @@ export default function App() {
   }, [messages]);
 
   return (
-    <div className="bg-black text-white h-screen flex flex-col items-center justify-between px-4 py-6 sm:px-6 md:px-8">
-      <h1 className="text-2xl sm:text-3xl font-bold text-yellow-400 text-center">
+    <div className="relative bg-black text-white h-screen flex flex-col items-center justify-between px-4 py-6 sm:px-6 md:px-8 overflow-hidden">
+
+      <img
+        src={furiaBg}
+        alt="FURIA Background"
+        className="absolute inset-0 w-full h-full object-contain opacity-10 pointer-events-none select-none"
+      />
+
+      <h1 className="text-2xl sm:text-3xl font-bold text-yellow-400 text-center z-10">
         FURIA FanBot 🐆🔥 — Seu assistente oficial do time de CS:GO!
       </h1>
 
       <div
         ref={chatRef}
-        className="flex-1 w-full max-w-xl overflow-y-auto my-4 p-4 bg-gray-900 rounded-lg shadow-inner sm:max-w-3xl"
+        className="flex-1 w-full max-w-xl overflow-y-auto my-4 p-4 bg-gray-900 rounded-lg shadow-inner sm:max-w-3xl z-10"
       >
         {messages.map((msg, idx) => (
           <motion.div
@@ -117,7 +124,7 @@ export default function App() {
         )}
       </div>
 
-      <div className="w-full max-w-xl flex gap-2 sm:max-w-3xl">
+      <div className="w-full max-w-xl flex gap-2 sm:max-w-3xl z-10">
         <input
           className="flex-1 p-3 rounded-xl bg-gray-800 text-white placeholder-gray-400 sm:p-4"
           placeholder="Digite sua mensagem..."
